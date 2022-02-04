@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="syle.css" />
+  </head>
+  <body>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      function MainComponents() {
+        return (
+          <div>
+            <Header />
+            <Main />
+          </div>
+        );
+      }
+
+      function MainHeadings() {
+        return <h1>Task List 2022</h1>;
+      }
+
+      function Inputs() {
+        return (
+          <form id="new-task-form">
+            <input
+              type=""
+              placeholder="What have planned for today?"
+              id="new-task-input"
+            />
+            <input type="submit" value="Add me" id="new-task-submit" />
+          </form>
+        );
+      }
+      function Header() {
+        return (
+          <div>
+            <MainHeadings /> <Inputs />
+          </div>
+        );
+      }
+
+      function Headingtwo() {
+        return <h2>Tasks</h2>;
+      }
+      function BlankDiv() {
+       return <div id="tasks"></div>;
+      }
+
+      function Sections() {
+        return(
+            <section class="task-list">
+          <Headingtwo />
+          <BlankDiv />
+        </section>
+        )
+      }
+      function Main() {
+        return (
+          <main>
+            <Sections />
+          </main>
+        );
+      }
+      ReactDOM.render(<MainComponents />, root);
+    </script>
+
+    <div id="root"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
